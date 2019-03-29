@@ -187,6 +187,7 @@
         <Property name="text" type="java.lang.String" value="Guardar"/>
       </Properties>
       <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="rbtnGuardarMouseClicked"/>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnGuardarActionPerformed"/>
       </Events>
     </Component>
@@ -206,6 +207,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Buscar"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="rbtnBuscarMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbtnEliminar">
       <Properties>
@@ -223,6 +227,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Eliminar"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="rbtnEliminarMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbtnEditar">
       <Properties>
@@ -240,6 +247,10 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Editar"/>
       </Properties>
+      <Events>
+        <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="rbtnEditarItemStateChanged"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="rbtnEditarMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnAccion">
       <Properties>
@@ -337,6 +348,9 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtCarnet">
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtCarnetFocusGained"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblNombre1">
       <Properties>

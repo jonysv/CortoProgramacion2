@@ -27,6 +27,7 @@ public class Ventana extends javax.swing.JFrame {
         txtNombre.requestFocus();
       
         rbtnGuardar.setSelected(true);
+        txtCarnet.setEnabled(false);
 
     }
 
@@ -86,6 +87,11 @@ public class Ventana extends javax.swing.JFrame {
         rbtnGuardar.setFont(new java.awt.Font("Bitstream Charter", 3, 18)); // NOI18N
         rbtnGuardar.setForeground(new java.awt.Color(237, 242, 243));
         rbtnGuardar.setText("Guardar");
+        rbtnGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rbtnGuardarMouseClicked(evt);
+            }
+        });
         rbtnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rbtnGuardarActionPerformed(evt);
@@ -97,18 +103,38 @@ public class Ventana extends javax.swing.JFrame {
         rbtnBuscar.setFont(new java.awt.Font("Bitstream Charter", 3, 18)); // NOI18N
         rbtnBuscar.setForeground(new java.awt.Color(237, 242, 243));
         rbtnBuscar.setText("Buscar");
+        rbtnBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rbtnBuscarMouseClicked(evt);
+            }
+        });
 
         rbtnEliminar.setBackground(java.awt.Color.darkGray);
         btnGrp.add(rbtnEliminar);
         rbtnEliminar.setFont(new java.awt.Font("Bitstream Charter", 3, 18)); // NOI18N
         rbtnEliminar.setForeground(new java.awt.Color(237, 242, 243));
         rbtnEliminar.setText("Eliminar");
+        rbtnEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rbtnEliminarMouseClicked(evt);
+            }
+        });
 
         rbtnEditar.setBackground(java.awt.Color.darkGray);
         btnGrp.add(rbtnEditar);
         rbtnEditar.setFont(new java.awt.Font("Bitstream Charter", 3, 18)); // NOI18N
         rbtnEditar.setForeground(new java.awt.Color(237, 242, 243));
         rbtnEditar.setText("Editar");
+        rbtnEditar.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                rbtnEditarItemStateChanged(evt);
+            }
+        });
+        rbtnEditar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rbtnEditarMouseClicked(evt);
+            }
+        });
 
         btnAccion.setBackground(new java.awt.Color(28, 116, 14));
         btnAccion.setForeground(new java.awt.Color(225, 234, 237));
@@ -143,6 +169,12 @@ public class Ventana extends javax.swing.JFrame {
         btnCerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCerrarActionPerformed(evt);
+            }
+        });
+
+        txtCarnet.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtCarnetFocusGained(evt);
             }
         });
 
@@ -311,6 +343,47 @@ public class Ventana extends javax.swing.JFrame {
     private void rbtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnGuardarActionPerformed
         // TODO add your handling code here
     }//GEN-LAST:event_rbtnGuardarActionPerformed
+
+    private void rbtnEditarItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_rbtnEditarItemStateChanged
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_rbtnEditarItemStateChanged
+
+    private void rbtnEditarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtnEditarMouseClicked
+        // TODO add your handling code here:
+        txtCarnet.setEnabled(true);
+        txtNombre.setEnabled(false);
+        txtApellido.setEnabled(false);
+    }//GEN-LAST:event_rbtnEditarMouseClicked
+
+    private void rbtnEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtnEliminarMouseClicked
+        // TODO add your handling code here:
+        txtCarnet.setEnabled(true);
+        txtNombre.setEnabled(false);
+        txtApellido.setEnabled(false);
+        lblResultado.setText("");
+    }//GEN-LAST:event_rbtnEliminarMouseClicked
+
+    private void rbtnBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtnBuscarMouseClicked
+        // TODO add your handling code here:
+        txtCarnet.setEnabled(true);
+        txtNombre.setEnabled(false);
+        txtApellido.setEnabled(false);
+        lblResultado.setText("");
+    }//GEN-LAST:event_rbtnBuscarMouseClicked
+
+    private void rbtnGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rbtnGuardarMouseClicked
+        // TODO add your handling code here:
+        txtCarnet.setEnabled(false);
+        txtNombre.setEnabled(true);
+        txtApellido.setEnabled(true);
+        lblResultado.setText("");
+    }//GEN-LAST:event_rbtnGuardarMouseClicked
+
+    private void txtCarnetFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtCarnetFocusGained
+        // TODO add your handling code here:
+        txtCarnet.setText("");
+    }//GEN-LAST:event_txtCarnetFocusGained
 
     /**
      * @param args the command line arguments
